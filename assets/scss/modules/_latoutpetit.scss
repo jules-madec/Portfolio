@@ -75,21 +75,21 @@
                     width: 100%;
                     border-radius: 22px;
                     box-shadow: $shadow-soft;
-                    position: absolute; // ✨ AJOUT
-                    top: 0; // ✨ AJOUT
-                    left: 0; // ✨ AJOUT
-                    opacity: 0; // ✨ AJOUT
-                    transition: opacity 0.5s ease-in-out; // ✨ AJOUT
-                    pointer-events: none; // ✨ AJOUT
+                    position: absolute; 
+                    top: 0; 
+                    left: 0; 
+                    opacity: 0; 
+                    transition: opacity 0.5s ease-in-out; 
+                    pointer-events: none; 
 
                     &.active {
-                        // ✨ AJOUT
+                        
                         opacity: 1;
                         pointer-events: auto;
                     }
                 }
 
-                // ✨ AJOUT - Bouton gauche (précédent)
+                
                 &_gauche {
                     position: absolute;
                     top: 50%;
@@ -115,7 +115,7 @@
 
                 }
 
-                // ✨ AJOUT - Bouton droit (suivant)
+                
                 &_droit {
                     position: absolute;
                     top: 50%;
@@ -236,7 +236,7 @@
     }
 }
 
-// ✨ AJOUT - Points indicateurs du carrousel
+
 .carousel-dots-custom {
     position: absolute;
     bottom: 20px;

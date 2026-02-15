@@ -106,7 +106,7 @@
                         </p>
                     </div>
                     <div id="lespetitprojets_1_boutton">
-                        <a href="https://github.com/jules-madec/Portfolio">
+                        <a href="https://github.com/jules-madec/Portfolio" target="_blank">
                             <p>En savoir plus</p>
                         </a>
                     </div>
@@ -207,24 +207,24 @@
         });
         const track = document.querySelector(".carousel-track");
         const items = Array.from(track.children);
-        const gap = 60; // ton gap SCSS
+        const gap = 60; 
         let position = 0;
         const speed = 0.5;
 
         function animate() {
             position += speed;
 
-            // déplace le track
+            
             track.style.transform = `translateX(-${position}px)`;
 
-            // regarde si le premier élément est complètement sorti
+            
             const first = track.children[0];
             const firstWidth = first.offsetWidth + gap;
 
             if (position >= firstWidth) {
-                // déplace le premier élément à la fin
+                
                 track.appendChild(first);
-                // ajuste la position pour continuer fluide
+        
                 position -= firstWidth;
             }
 
@@ -258,7 +258,7 @@
                 bouleBleu2.style.transform = `translateY(${scrolled * 0.4}px)`;
             }
         });
-        // ========== CARROUSEL ==========
+       
         const carouselContainer = document.querySelector('#lespetitprojets_1');
         const imagesContainer = document.querySelector('#lespetitprojets_1_img');
         const images = imagesContainer.querySelectorAll('img');
@@ -268,7 +268,7 @@
         let currentSlideIndex = 0;
         let autoSlideTimer;
 
-        // Créer les points indicateurs dynamiquement
+        
         const dotsContainer = document.createElement('div');
         dotsContainer.className = 'carousel-dots-custom';
         imagesContainer.appendChild(dotsContainer);
@@ -283,10 +283,10 @@
             dotsArray.push(dot);
         });
 
-        // Afficher la première image au démarrage
+       
         images[0].classList.add('active');
 
-        // Fonction pour changer de slide
+       
         function goToSlide(index) {
             if (index >= images.length) {
                 currentSlideIndex = 0;
@@ -296,36 +296,36 @@
                 currentSlideIndex = index;
             }
 
-            // Retirer la classe active
+            
             images.forEach(img => img.classList.remove('active'));
             dotsArray.forEach(dot => dot.classList.remove('active'));
 
-            // Ajouter la classe active
+            
             images[currentSlideIndex].classList.add('active');
             dotsArray[currentSlideIndex].classList.add('active');
         }
 
-        // Slide suivante
+        
         function nextSlideCarousel() {
             goToSlide(currentSlideIndex + 1);
         }
 
-        // Slide précédente
+        
         function prevSlideCarousel() {
             goToSlide(currentSlideIndex - 1);
         }
 
-        // Démarrer le carrousel automatique
+        
         function startAutoCarousel() {
             autoSlideTimer = setInterval(nextSlideCarousel, 3000); // 3 secondes
         }
 
-        // Arrêter le carrousel automatique
+        
         function stopAutoCarousel() {
             clearInterval(autoSlideTimer);
         }
 
-        // Events sur tes boutons HTML
+        
         btnGauche.addEventListener('click', () => {
             prevSlideCarousel();
             stopAutoCarousel();
@@ -338,7 +338,7 @@
             startAutoCarousel();
         });
 
-        // Events sur les dots
+        
         dotsArray.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 goToSlide(index);
@@ -347,11 +347,11 @@
             });
         });
 
-        // Pause au survol
+        
         carouselContainer.addEventListener('mouseenter', stopAutoCarousel);
         carouselContainer.addEventListener('mouseleave', startAutoCarousel);
 
-        // Lancer le carrousel
+        
         startAutoCarousel();
 
 
