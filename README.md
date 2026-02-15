@@ -2,6 +2,16 @@
 
 Portfolio personnel développé entièrement par moi-même, du design au code.
 
+## 📖 Description
+
+Développeur Full-Stack de 19 ans en 2ᵉ année de Bachelor Chef de Projet Développement & IA à LA MANU (Compiègne). Ce portfolio présente mes projets et compétences avec un design moderne et des animations fluides.
+
+**Fonctionnalités :**
+- Carrousel automatique de projets
+- Effet parallaxe au scroll
+- Curseur personnalisé
+- Design responsive
+
 ## 🛠️ Technologies
 
 - **HTML5**
