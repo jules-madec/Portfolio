@@ -1,0 +1,195 @@
+@use "../abstracts" as *;
+
+
+
+#home {
+    height: 100vh;
+    width: 99vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3%;
+
+    #lapresentation {
+        height: 65%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+
+
+        #grand_titre {
+
+            height: 52%;
+
+            h1 {
+                font-family: $font-title ;
+                font-size: 90px;
+                color: $black;
+
+                span {
+                    color: $blue-dark;
+                }
+            }
+        }
+
+        #phrase_daccroche {
+            width: 95%;
+            margin-top: 1%;
+            margin-right: 5%;
+
+            font-family: 'Inter', sans-serif;
+
+            p {
+                font-size: 1.4rem;
+                line-height: 1.8;
+
+                font-weight: 500;
+
+                strong {
+                    font-weight: 700;
+                    color: #111827;
+
+                    // Option premium (effet dégradé moderne)
+                    background: linear-gradient(90deg, $blue-dark, $blue);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                span {
+                    display: block;
+                    margin-top: 20px;
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    color: #4b5563;
+                    position: relative;
+                    padding-left: 20px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 8px;
+                        height: 70%;
+                        width: 4px;
+                        background: linear-gradient(180deg, $blue-dark, $blue);
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    #lescartes {
+        height: 70%;
+        width: 40%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin: 1%;
+        padding: 1%;
+
+        #boule_blanche {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: $shadow-soft;
+            background-color: $blue-dark;
+            top: -9%;
+            left: 6%;
+            z-index: -1;
+        }
+
+        #boule_blanche_1 {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: $shadow-soft;
+            background-color: $blue-dark;
+            bottom: -20%;
+            right: 0%;
+            z-index: -1;
+        }
+
+        #boule_bleu_1 {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: $shadow-soft;
+            background-color: $white-soft;
+            left: -20%;
+            bottom: 2%;
+            z-index: -1;
+
+        }
+
+        #boule_bleu_2 {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: $shadow-soft;
+            background-color: $blue-dark;
+            left: -26%;
+            z-index: -1;
+            top: 28%;
+
+        }
+
+
+
+        #card_blanche_1 {
+            height: 60%;
+            width: 40%;
+            background-color: $white-soft;
+            position: absolute;
+            bottom: 14%;
+            right: 40%;
+            border-radius: 15%;
+            transform: rotate(15deg);
+            box-shadow: $shadow-soft;
+        }
+
+        #card_blanche_2 {
+            height: 60%;
+            width: 40%;
+            background-color: $white-soft;
+            position: absolute;
+            top: 13%;
+            right: 20%;
+            border-radius: 15%;
+            transform: rotate(15deg);
+            box-shadow: $shadow-soft;
+        }
+
+        #card_bleu {
+            height: 60%;
+            width: 40%;
+            background-color: $blue-dark;
+            position: absolute;
+            border-radius: 15%;
+            transform: rotate(15deg);
+            box-shadow: $shadow-soft;
+
+            #la {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: rotate(-10deg);
+
+                img {
+                    height: 200px;
+                    width: 200px;
+                }
+            }
+        }
+
+    }
+}

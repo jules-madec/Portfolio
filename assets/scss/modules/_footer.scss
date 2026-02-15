@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+#footer {
+    height: 35vh;
+    width: 99vw;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    backdrop-filter: blur(11px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &_logo {
+        height: 80%;
+        width: 20%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;
+
+        img {
+            height: 235px;
+            width: 235px;
+        }
+
+
+    }
+
+
+}

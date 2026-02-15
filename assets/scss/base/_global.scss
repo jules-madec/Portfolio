@@ -1,0 +1,22 @@
+.blue {
+  background: blue;
+}
+
+.red {
+  background: red;
+}
+
+.white {
+  background: white;
+}
+
+.green {
+  background: green;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222222;
+}
