@@ -634,9 +634,6 @@ body {
 }
 #latoutpetit #lespetitprojets_3 #lespetitprojets_4_texte p {
   padding-left: 3%;
-  color: #1f6ed5;
-  font-size: 14px;
-  line-height: 1.6;
 }
 #latoutpetit #lespetitprojets_3 #lespetitprojets_4_texte::before {
   content: "";
