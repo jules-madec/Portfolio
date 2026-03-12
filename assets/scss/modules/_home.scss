@@ -1,7 +1,5 @@
 @use "../abstracts" as *;
 
-
-
 #home {
     height: 100vh;
     width: 99vw;
@@ -17,13 +15,11 @@
         flex-direction: column;
         margin-left: 5%;
 
-
         #grand_titre {
-
             height: 52%;
 
             h1 {
-                font-family: $font-title ;
+                font-family: $font-title;
                 font-size: 90px;
                 color: $black;
 
@@ -37,20 +33,16 @@
             width: 95%;
             margin-top: 1%;
             margin-right: 5%;
-
             font-family: 'Inter', sans-serif;
 
             p {
                 font-size: 1.4rem;
                 line-height: 1.8;
-
                 font-weight: 500;
 
                 strong {
                     font-weight: 700;
                     color: #111827;
-
-                    
                     background: linear-gradient(90deg, $blue-dark, $blue);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
@@ -78,7 +70,6 @@
                 }
             }
         }
-
     }
 
     #lescartes {
@@ -125,7 +116,6 @@
             left: -20%;
             bottom: 2%;
             z-index: -1;
-
         }
 
         #boule_bleu_2 {
@@ -138,10 +128,7 @@
             left: -26%;
             z-index: -1;
             top: 28%;
-
         }
-
-
 
         #card_blanche_1 {
             height: 60%;
@@ -190,6 +177,109 @@
                 }
             }
         }
+    }
+}
 
+@media (max-width: 768px) {
+    #home {
+        height: auto;
+        min-height: 100svh;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12vh;
+        gap: 40px;
+        padding: 0 5% 60px;
+        box-sizing: border-box;
+
+        #lapresentation {
+            width: 100%;
+            height: auto;
+            margin-left: 0;
+            align-items: flex-start;
+
+            #grand_titre {
+                height: auto;
+
+                h1 {
+                    font-size: 48px;
+                    line-height: 1.15;
+                }
+            }
+
+            #phrase_daccroche {
+                width: 100%;
+                margin-top: 16px;
+                margin-right: 0;
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.7;
+
+                    span {
+                        font-size: 0.9rem;
+                        margin-top: 14px;
+                    }
+                }
+            }
+        }
+
+        #lescartes {
+            width: 85%;
+            height: 340px;
+
+            #boule_blanche {
+                height: 55px;
+                width: 55px;
+                top: -5%;
+                left: 2%;
+            }
+
+            #boule_blanche_1 {
+                height: 75px;
+                width: 75px;
+                bottom: -10%;
+                right: -2%;
+            }
+
+            #boule_bleu_1 {
+                height: 55px;
+                width: 55px;
+                left: -8%;
+                bottom: 5%;
+            }
+
+            #boule_bleu_2 {
+                height: 40px;
+                width: 40px;
+                left: -12%;
+                top: 28%;
+            }
+
+            #card_blanche_1 {
+                height: 62%;
+                width: 44%;
+                bottom: 12%;
+                right: 38%;
+            }
+
+            #card_blanche_2 {
+                height: 62%;
+                width: 44%;
+                top: 10%;
+                right: 18%;
+            }
+
+            #card_bleu {
+                height: 62%;
+                width: 44%;
+
+                #la img {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+        }
     }
 }

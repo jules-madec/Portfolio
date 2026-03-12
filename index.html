@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/pages/index.css">
 
 
+
     <title>Document</title>
 
 </head>
@@ -14,11 +15,18 @@
 <body>
     <header>
         <nav id="lanav">
+
             <div id="lelogonav">
                 <img src="assets/img/_.svg" alt="julesDev">
             </div>
-            <div id="letextenav">
 
+            <div id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div id="letextenav">
 
                 <a href="#home">
                     <h3>Accueil</h3>
@@ -27,18 +35,14 @@
                 <a href="#latoutpetit">
                     <h3>Projets</h3>
                 </a>
+
                 <a href="#contact">
                     <h3>Contact</h3>
                 </a>
+
                 <a id="lecontact" href="assets/img/cv_jules_madec (2).pdf" target="_blank">
                     <h3>Mon CV</h3>
                 </a>
-
-
-
-            </div>
-
-
 
             </div>
 
@@ -116,10 +120,23 @@
                     <div></div>
                     <div></div>
                 </div>
+
                 <div id="lespetitprojets_3">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="lespetitprojets_4_icon">
+                        <span>👾</span>
+                    </div>
+                    <div id="lespetitprojets_4_h4">
+                        <h4>Et bien d'autres...</h4>
+                    </div>
+                    <div id="lespetitprojets_4_texte">
+                        <p>Retrouve l'ensemble de mes projets, expérimentations et travaux directement sur mon GitHub.
+                        </p>
+                    </div>
+                    <div id="lespetitprojets_4_boutton">
+                        <a href="https://github.com/jules-madec" target="_blank">
+                            <p>Voir mes projets</p>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -164,7 +181,7 @@
                     <h3>Contact</h3>
                 </div>
                 <div id="contact_lesqr">
-                    <div id="qr_code"> <img src="assets/img/QRcode_Wikipedia_FRA.png" alt=""></div>
+                    <div id="qr_code"> <img src="assets/img/url_qrcodecreator.com_21_02_14.svg" alt=""></div>
                     <div id="labar"></div>
                     <div id="lesboutton">
                         <a href="https://github.com/jules-madec" target="_blank">
@@ -192,11 +209,36 @@
 
     </main>
     <footer id="footer">
-        <div id="footer_logo"> <img src="assets/img/_.svg" alt=""></div>
-        <div></div>
-        <div></div>
+        <div class="footer_inner">
+
+            <div class="footer_logo">
+                <img src="assets/img/_.svg" alt="logo Jules Madec">
+
+            </div>
+
+            <div class="footer_col">
+                <h4>Contact</h4>
+                <a href="mailto:julomadec@gmail.com">julomadec@gmail.com</a>
+                <span>Compiègne, France</span>
+                <a href="assets/img/cv_jules_madec (2).pdf" target="_blank">Télécharger mon CV</a>
+            </div>
 
 
+            <div class="footer_col">
+                <h4>Réseaux</h4>
+                <a href="https://github.com/jules-madec" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/jules-madec-43079b2b7/" target="_blank">LinkedIn</a>
+            </div>
+
+        </div>
+
+        <div class="footer_bottom">
+            <p>© 2026 Jules Madec — Tous droits réservés</p>
+            <div class="footer_links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+            </div>
+        </div>
     </footer>
     <script>
         const circle = document.querySelector('.cursor-circle');
@@ -207,24 +249,24 @@
         });
         const track = document.querySelector(".carousel-track");
         const items = Array.from(track.children);
-        const gap = 60; 
+        const gap = 60;
         let position = 0;
         const speed = 0.5;
 
         function animate() {
             position += speed;
 
-            
+
             track.style.transform = `translateX(-${position}px)`;
 
-            
+
             const first = track.children[0];
             const firstWidth = first.offsetWidth + gap;
 
             if (position >= firstWidth) {
-                
+
                 track.appendChild(first);
-        
+
                 position -= firstWidth;
             }
 
@@ -258,7 +300,7 @@
                 bouleBleu2.style.transform = `translateY(${scrolled * 0.4}px)`;
             }
         });
-       
+
         const carouselContainer = document.querySelector('#lespetitprojets_1');
         const imagesContainer = document.querySelector('#lespetitprojets_1_img');
         const images = imagesContainer.querySelectorAll('img');
@@ -268,7 +310,7 @@
         let currentSlideIndex = 0;
         let autoSlideTimer;
 
-        
+
         const dotsContainer = document.createElement('div');
         dotsContainer.className = 'carousel-dots-custom';
         imagesContainer.appendChild(dotsContainer);
@@ -283,10 +325,10 @@
             dotsArray.push(dot);
         });
 
-       
+
         images[0].classList.add('active');
 
-       
+
         function goToSlide(index) {
             if (index >= images.length) {
                 currentSlideIndex = 0;
@@ -296,36 +338,36 @@
                 currentSlideIndex = index;
             }
 
-            
+
             images.forEach(img => img.classList.remove('active'));
             dotsArray.forEach(dot => dot.classList.remove('active'));
 
-            
+
             images[currentSlideIndex].classList.add('active');
             dotsArray[currentSlideIndex].classList.add('active');
         }
 
-        
+
         function nextSlideCarousel() {
             goToSlide(currentSlideIndex + 1);
         }
 
-        
+
         function prevSlideCarousel() {
             goToSlide(currentSlideIndex - 1);
         }
 
-        
+
         function startAutoCarousel() {
             autoSlideTimer = setInterval(nextSlideCarousel, 3000); // 3 secondes
         }
 
-        
+
         function stopAutoCarousel() {
             clearInterval(autoSlideTimer);
         }
 
-        
+
         btnGauche.addEventListener('click', () => {
             prevSlideCarousel();
             stopAutoCarousel();
@@ -338,7 +380,7 @@
             startAutoCarousel();
         });
 
-        
+
         dotsArray.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 goToSlide(index);
@@ -347,12 +389,35 @@
             });
         });
 
-        
+
         carouselContainer.addEventListener('mouseenter', stopAutoCarousel);
         carouselContainer.addEventListener('mouseleave', startAutoCarousel);
 
-        
+
         startAutoCarousel();
+        // BURGER MENU
+
+        const burger = document.querySelector("#burger");
+        const navMenu = document.querySelector("#letextenav");
+        const navLinks = document.querySelectorAll("#letextenav a");
+
+        burger.addEventListener("click", () => {
+
+            navMenu.classList.toggle("active");
+            burger.classList.toggle("active");
+
+        });
+
+        // fermer menu quand on clique sur un lien
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+
+                navMenu.classList.remove("active");
+                burger.classList.remove("active");
+
+            });
+        });
 
 
 
