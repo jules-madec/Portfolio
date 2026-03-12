@@ -1028,7 +1028,7 @@ body {
     gap: 30px;
   }
   #techno_h3 {
-    width: 80%;
+    width: 85%;
     height: auto;
   }
   #techno_h3::before, #techno_h3::after {
@@ -1194,9 +1194,11 @@ body {
     font-size: 34px;
   }
   #contact_partie_h3::before {
+    width: 30%;
     left: -60%;
   }
   #contact_partie_h3::after {
+    width: 30%;
     right: -60%;
   }
   #contact_lesqr {

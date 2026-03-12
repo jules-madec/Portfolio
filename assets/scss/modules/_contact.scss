@@ -183,10 +183,12 @@
                 }
 
                 &::before {
+                    width: 30%;
                     left: -60%;
                 }
 
                 &::after {
+                    width: 30%;
                     right: -60%;
                 }
             }
