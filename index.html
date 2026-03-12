@@ -8,7 +8,8 @@
 
 
 
-    <title>Document</title>
+    <title>Potfolio</title>
+    <link rel="icon" type="image/png" href="assets/img/logo.svg">
 
 </head>
 
@@ -116,9 +117,29 @@
                     </div>
                 </div>
                 <div id="lespetitprojets_2">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="lespetitprojets_2_img"><img src="assets/img/connexion_tricount.png"
+                            alt="connexion_tricount">
+                        <img src="assets/img/page_acceuil.png" alt="page_acceuil">
+                        <img src="assets/img/page_acceuil_remplie.png" alt="page_acceuil_remplie">
+                        <img src="assets/img/tricount_detail.png" alt="tricount_detail">
+                        <div id="lespetitprojets_2_img_droit"></div>
+                        <div id="lespetitprojets_2_img_gauche"></div>
+                    </div>
+                    <div id="lespetitprojets_2_h4">
+                        <h4>Tricount</h4>
+                    </div>
+                    <div id="lespetitprojets_2_texte">
+                        <p>J'ai conçu et développé une application de gestion des dépenses partagées, inspirée de
+                            Tricount,
+                            permettant de simplifier le partage de frais entre amis ou en groupe.
+                            <span> Elle a été entièrement réalisée par moi, de la modélisation de la base de données à
+                                l'intégration front-end et à la logique de calcul des remboursements.</span>
+                        </p>
+                    </div>
+                    <div id="lespetitprojets_2_boutton"><a href="https://github.com/Boursier-Enzo/Projet-Tricount"
+                            target="_blank">
+                            <p>En savoir plus</p>
+                        </a></div>
                 </div>
 
                 <div id="lespetitprojets_3">
@@ -245,32 +266,23 @@
             circle.style.left = `${e.clientX}px`;
             circle.style.top = `${e.clientY}px`;
         });
+
         const track = document.querySelector(".carousel-track");
-        const items = Array.from(track.children);
         const gap = 60;
         let position = 0;
         const speed = 0.5;
 
         function animate() {
             position += speed;
-
-
             track.style.transform = `translateX(-${position}px)`;
-
-
             const first = track.children[0];
             const firstWidth = first.offsetWidth + gap;
-
             if (position >= firstWidth) {
-
                 track.appendChild(first);
-
                 position -= firstWidth;
             }
-
             requestAnimationFrame(animate);
         }
-
         animate();
 
         const bouleBlanche = document.querySelector('#boule_blanche');
@@ -280,147 +292,84 @@
 
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-
-
-            if (bouleBlanche) {
-                bouleBlanche.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-
-            if (bouleBlanche1) {
-                bouleBlanche1.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-
-            if (bouleBleu1) {
-                bouleBleu1.style.transform = `translateY(${scrolled * 0.2}px)`;
-            }
-
-            if (bouleBleu2) {
-                bouleBleu2.style.transform = `translateY(${scrolled * 0.4}px)`;
-            }
-        });
-
-        const carouselContainer = document.querySelector('#lespetitprojets_1');
-        const imagesContainer = document.querySelector('#lespetitprojets_1_img');
-        const images = imagesContainer.querySelectorAll('img');
-        const btnGauche = document.querySelector('#lespetitprojets_1_img_gauche');
-        const btnDroit = document.querySelector('#lespetitprojets_1_img_droit');
-
-        let currentSlideIndex = 0;
-        let autoSlideTimer;
-
-
-        const dotsContainer = document.createElement('div');
-        dotsContainer.className = 'carousel-dots-custom';
-        imagesContainer.appendChild(dotsContainer);
-
-        const dotsArray = [];
-        images.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.className = 'dot-custom';
-            if (index === 0) dot.classList.add('active');
-            dot.dataset.slide = index;
-            dotsContainer.appendChild(dot);
-            dotsArray.push(dot);
+            if (bouleBlanche) bouleBlanche.style.transform = `translateY(${scrolled * 0.3}px)`;
+            if (bouleBlanche1) bouleBlanche1.style.transform = `translateY(${scrolled * 0.5}px)`;
+            if (bouleBleu1) bouleBleu1.style.transform = `translateY(${scrolled * 0.2}px)`;
+            if (bouleBleu2) bouleBleu2.style.transform = `translateY(${scrolled * 0.4}px)`;
         });
 
 
-        images[0].classList.add('active');
+        function createCarousel(containerId, imgContainerId, btnGaucheId, btnDroitId) {
+            const container = document.querySelector(`#${containerId}`);
+            const imagesContainer = document.querySelector(`#${imgContainerId}`);
+            const images = imagesContainer.querySelectorAll('img');
+            const btnGauche = document.querySelector(`#${btnGaucheId}`);
+            const btnDroit = document.querySelector(`#${btnDroitId}`);
+
+            let currentSlideIndex = 0;
+            let autoSlideTimer;
 
 
-        function goToSlide(index) {
-            if (index >= images.length) {
-                currentSlideIndex = 0;
-            } else if (index < 0) {
-                currentSlideIndex = images.length - 1;
-            } else {
-                currentSlideIndex = index;
-            }
+            const dotsContainer = document.createElement('div');
+            dotsContainer.className = 'carousel-dots-custom';
+            imagesContainer.appendChild(dotsContainer);
 
-
-            images.forEach(img => img.classList.remove('active'));
-            dotsArray.forEach(dot => dot.classList.remove('active'));
-
-
-            images[currentSlideIndex].classList.add('active');
-            dotsArray[currentSlideIndex].classList.add('active');
-        }
-
-
-        function nextSlideCarousel() {
-            goToSlide(currentSlideIndex + 1);
-        }
-
-
-        function prevSlideCarousel() {
-            goToSlide(currentSlideIndex - 1);
-        }
-
-
-        function startAutoCarousel() {
-            autoSlideTimer = setInterval(nextSlideCarousel, 3000); // 3 secondes
-        }
-
-
-        function stopAutoCarousel() {
-            clearInterval(autoSlideTimer);
-        }
-
-
-        btnGauche.addEventListener('click', () => {
-            prevSlideCarousel();
-            stopAutoCarousel();
-            startAutoCarousel();
-        });
-
-        btnDroit.addEventListener('click', () => {
-            nextSlideCarousel();
-            stopAutoCarousel();
-            startAutoCarousel();
-        });
-
-
-        dotsArray.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                stopAutoCarousel();
-                startAutoCarousel();
+            const dotsArray = [];
+            images.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.className = 'dot-custom';
+                if (index === 0) dot.classList.add('active');
+                dot.dataset.slide = index;
+                dotsContainer.appendChild(dot);
+                dotsArray.push(dot);
             });
-        });
+
+            images[0].classList.add('active');
+
+            function goToSlide(index) {
+                if (index >= images.length) currentSlideIndex = 0;
+                else if (index < 0) currentSlideIndex = images.length - 1;
+                else currentSlideIndex = index;
+
+                images.forEach(img => img.classList.remove('active'));
+                dotsArray.forEach(dot => dot.classList.remove('active'));
+                images[currentSlideIndex].classList.add('active');
+                dotsArray[currentSlideIndex].classList.add('active');
+            }
+
+            function startAuto() { autoSlideTimer = setInterval(() => goToSlide(currentSlideIndex + 1), 3000); }
+            function stopAuto() { clearInterval(autoSlideTimer); }
+
+            btnGauche.addEventListener('click', () => { goToSlide(currentSlideIndex - 1); stopAuto(); startAuto(); });
+            btnDroit.addEventListener('click', () => { goToSlide(currentSlideIndex + 1); stopAuto(); startAuto(); });
+            dotsArray.forEach((dot, i) => dot.addEventListener('click', () => { goToSlide(i); stopAuto(); startAuto(); }));
+
+            container.addEventListener('mouseenter', stopAuto);
+            container.addEventListener('mouseleave', startAuto);
+
+            startAuto();
+        }
 
 
-        carouselContainer.addEventListener('mouseenter', stopAutoCarousel);
-        carouselContainer.addEventListener('mouseleave', startAutoCarousel);
+        createCarousel('lespetitprojets_1', 'lespetitprojets_1_img', 'lespetitprojets_1_img_gauche', 'lespetitprojets_1_img_droit');
+        createCarousel('lespetitprojets_2', 'lespetitprojets_2_img', 'lespetitprojets_2_img_gauche', 'lespetitprojets_2_img_droit');
 
-
-        startAutoCarousel();
-        // BURGER MENU
 
         const burger = document.querySelector("#burger");
         const navMenu = document.querySelector("#letextenav");
         const navLinks = document.querySelectorAll("#letextenav a");
 
         burger.addEventListener("click", () => {
-
             navMenu.classList.toggle("active");
             burger.classList.toggle("active");
-
         });
-
-        // fermer menu quand on clique sur un lien
 
         navLinks.forEach(link => {
             link.addEventListener("click", () => {
-
                 navMenu.classList.remove("active");
                 burger.classList.remove("active");
-
             });
         });
-
-
-
-
-
     </script>
 
 

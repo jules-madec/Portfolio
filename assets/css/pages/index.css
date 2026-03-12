@@ -584,6 +584,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+#latoutpetit #lespetitprojets_1_boutton a:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
 }
 #latoutpetit #lespetitprojets_1_boutton a p {
   color: #f5f5f5;
@@ -595,7 +600,135 @@ body {
   height: 90%;
   width: 27%;
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
   border-radius: 22px;
+}
+#latoutpetit #lespetitprojets_2_img {
+  height: 40%;
+  width: 95%;
+  position: relative;
+}
+#latoutpetit #lespetitprojets_2_img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+#latoutpetit #lespetitprojets_2_img img.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+#latoutpetit #lespetitprojets_2_img_gauche {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#latoutpetit #lespetitprojets_2_img_gauche::before {
+  content: "❮";
+  color: #1f6ed5;
+  font-size: 24px;
+}
+#latoutpetit #lespetitprojets_2_img_droit {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#latoutpetit #lespetitprojets_2_img_droit::before {
+  content: "❯";
+  color: #1f6ed5;
+  font-size: 24px;
+}
+#latoutpetit #lespetitprojets_2_h4 {
+  margin-top: 5%;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#latoutpetit #lespetitprojets_2_h4 h4 {
+  color: #1f6ed5;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+#latoutpetit #lespetitprojets_2_texte {
+  height: 18%;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#latoutpetit #lespetitprojets_2_texte p {
+  padding-left: 3%;
+}
+#latoutpetit #lespetitprojets_2_texte::before {
+  content: "";
+  height: 100%;
+  width: 1.5%;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #1f6ed5, #4da3ff);
+}
+#latoutpetit #lespetitprojets_2_texte span {
+  display: block;
+  margin-top: 2%;
+}
+#latoutpetit #lespetitprojets_2_boutton {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#latoutpetit #lespetitprojets_2_boutton a {
+  height: 68%;
+  width: 45%;
+  background: linear-gradient(90deg, #1f6ed5, #4da3ff);
+  border-radius: 45px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+#latoutpetit #lespetitprojets_2_boutton a:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+#latoutpetit #lespetitprojets_2_boutton a p {
+  color: #f5f5f5;
+  font-size: 20px;
 }
 #latoutpetit #lespetitprojets_3 {
   background-color: #f5f5f5;
@@ -610,9 +743,6 @@ body {
   border-radius: 22px;
   padding: 20px 0;
   box-sizing: border-box;
-}
-#latoutpetit #lespetitprojets_3 #lespetitprojets_4_icon span {
-  font-size: 60px;
 }
 #latoutpetit #lespetitprojets_3 #lespetitprojets_4_h4 {
   width: 100%;
@@ -756,7 +886,32 @@ body {
   #latoutpetit #lespetitprojets_2 {
     width: 100%;
     height: auto;
-    min-height: 200px;
+    padding: 20px 0;
+  }
+  #latoutpetit #lespetitprojets_2_img {
+    height: 200px;
+    width: 90%;
+  }
+  #latoutpetit #lespetitprojets_2_h4 h4 {
+    font-size: 22px;
+  }
+  #latoutpetit #lespetitprojets_2_texte {
+    height: auto;
+    width: 90%;
+    padding: 10px 0;
+  }
+  #latoutpetit #lespetitprojets_2_texte p {
+    font-size: 0.9rem;
+  }
+  #latoutpetit #lespetitprojets_2_boutton {
+    height: 60px;
+  }
+  #latoutpetit #lespetitprojets_2_boutton a {
+    width: 55%;
+    height: 80%;
+  }
+  #latoutpetit #lespetitprojets_2_boutton a p {
+    font-size: 16px;
   }
   #latoutpetit #lespetitprojets_3 {
     width: 100%;
@@ -873,7 +1028,7 @@ body {
     gap: 30px;
   }
   #techno_h3 {
-    width: 70%;
+    width: 80%;
     height: auto;
   }
   #techno_h3::before, #techno_h3::after {
